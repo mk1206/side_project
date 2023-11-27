@@ -4,9 +4,7 @@
             <span class="menu">메뉴</span>
         </div>
         <div>
-            <a href="">
-                <img class="logoNexon" src="../img/logo_nexon.png">
-            </a>
+            <a href=""><img class="logoNexon" src="../img/logo_nexon.png"></a>
         </div>
         <div>
             <div class="sign">

@@ -33,12 +33,13 @@ a {
     border: 2px solid #000;
     border-radius: 20px;
     padding: 5px 15px;
-    font-weight: 700;
+    font-weight: 900;
     margin-left: 5px;
 }
 
 .nav {
     background-color: #000;
+    width: 100%;
     height: 80px;
     display: flex;
     justify-content: flex-end;
@@ -62,4 +63,61 @@ a {
 
 .slide {
     object-fit: contain;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    /* right: 0; */
+    z-index:999999;
+}
+
+.banner {
+    position: relative;
+    top: -80px;
+    z-index: -1;
+}
+
+.bButton {
+    height: 80px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    bottom: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #8d8d8d;
+    font-size: 1.5rem;
+}
+
+
+.btnleft {
+    margin-left: 350px;
+}
+
+.btnright {
+    margin-right: 350px;
+}
+
+.btnbox {
+    width: 1200px;
+    text-align: center;
+}
+
+.btnbox>div {
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+}
+.block {
+    width: 265px;
+    height: 343px;
+    background-color: #414141;
+    float: left;
+    margin-left: 20px;
+}
+.section1 {
+    width: 100%;
+    margin: 0 auto;
 }
