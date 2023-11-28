@@ -8,8 +8,8 @@
         </div>
         <div>
             <div class="sign">
-                <a href="">회원가입</a>
-                <a class="signIn" href="">로그인</a>
+                <a href="{{ route('regist.get') }}">회원가입</a>
+                <a class="signIn" href="{{ route('login.get') }}">로그인</a>
             </div>
         </div>
     </div>
