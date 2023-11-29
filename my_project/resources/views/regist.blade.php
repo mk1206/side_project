@@ -10,6 +10,7 @@
 	<br><br><br><br>
 	<form action="{{ route('regist.post') }}" method="POST">
 		@csrf
+		@include('layout.errorlayout')
 		<div class="input">
 			<input type="text" class="input-tag" placeholder="이메일" name="email">
 			<br><br>

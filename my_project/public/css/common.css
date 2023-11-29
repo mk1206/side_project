@@ -97,22 +97,24 @@ button {
 
 
 .btnleft {
-    margin-left: 350px;
+    margin-left: 330px;
 }
 
 .btnright {
-    margin-right: 350px;
+    margin-right: 330px;
 }
 
 .btnbox {
     width: 1200px;
     text-align: center;
+    font-size: 0.8rem;
 }
 
 .btnbox>div {
     display: inline-block;
-    width: 200px;
+    width: 225px;
     height: 50px;
+    line-height: 50px;
 }
 .block {
     width: 265px;
@@ -192,4 +194,10 @@ button {
     text-align: center;
     color: red;
     margin: -15px 0 15px 0;
+    font-size: 0.8rem;
+}
+
+.ham {
+    width: 30px;
+    margin: 0 -5px 0 15px;
 }

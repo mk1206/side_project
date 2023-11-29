@@ -20,18 +20,18 @@ class UserController extends Controller
             $request->only('email', 'password')
             , [
                 'email'     => 'required|email|max:50'
-                , 'password'=> 'required|same:passwordchk'
+                , 'password'=> 'required'
             ]
         );
 
         if($validator->fails()) {
-            return view('login')->withErorrs($validator->errors());
+            return view('login')->withErrors($validator->errors());
         };
 
         $result = User::where('email', $request->email)->first();
-        if(!$reuslt || !(Hash::check($request->password, $result->password))) {
+        if(!$result || !(Hash::check($request->password, $result->password))) {
             $errorMsg = '아이디와 비밀번호를 다시 확인해 주세요';
-            return redirect()->route('login.get')->widthErrors($errorMsg);
+            return redirect()->route('login.get')->withErrors($errorMsg);
         }
 
         Auth::login($result);
@@ -42,7 +42,7 @@ class UserController extends Controller
             return view('login')->withErrors($errorMsg);
         }
 
-        return redirect()->route('index');
+        return redirect()->route('main');
     }
 
     public function registget() {
@@ -60,7 +60,7 @@ class UserController extends Controller
         );
 
         if($validator->fails()) {
-            return view('regist')->withErorrs($validator->errors());
+            return view('regist')->withErrors($validator->errors());
         };
 
         $data = $request->only('email', 'password', 'name');
@@ -71,4 +71,15 @@ class UserController extends Controller
 
         return redirect()->route('login.get');
     }
+
+    public function logoutget() {
+        Session::flush();
+        Auth::logout();
+        return redirect()->route('main');
+    }
+
+    // public function logincheckget() {
+    //     $logincheck = Auth::check();
+    //     return redirect()->route('main')->with($logincheck);
+    // }
 }

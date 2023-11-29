@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\BoardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,12 +15,14 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('main');
-})->name('index');
-
+Route::get('/', [BoardController::class, 'main'])->name('main');
 
 Route::get('/login', [UserController::class, 'loginget'])->name('login.get');
 Route::post('/login', [UserController::class, 'loginpost'])->name('login.post');
 Route::get('/regist', [UserController::class, 'registget'])->name('regist.get');
 Route::post('/regist', [UserController::class, 'registpost'])->name('regist.post');
+Route::get('/logout', [UserController::class, 'logoutget'])->name('logout.get');
+
+Route::get('/logincheck', function() {
+    return response()->json(['authcheck' => Auth::check()]);
+});
