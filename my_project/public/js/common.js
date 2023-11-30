@@ -1,13 +1,40 @@
 let n=0;
 let element = document.getElementById('slide');
-let BTNCONTENT = document.getElementById('btncontent');
 let myData = JSON.parse(element.getAttribute('data-mydata'));
+// document.querySelector(`.btnbox :nth-child(${n + 1})`).style.color='#8d8d8d';
+
+startSlideshow();
+
+function startSlideshow() {
+    interval = setInterval(rotate, 5000);
+};
+
+function stopSlideshow() {
+    clearInterval(interval);
+};
 
 function rotate() {
-    document.getElementById("slide").src=myData[n]['e_img'];
-    (n === (myData.length-1)) ? n=0 : n++;
-    setTimeout(rotate, 5000) 
+    element.src=myData[n]['e_img'];
+    (n === (myData.length-1)) ? n = 0 : n++;
 };
+
+let BTNBOX = document.querySelector('.btnbox');
+
+for(i = 0; i < myData.length; i++) {
+    let DIVCONTENT = document.createElement('a');
+    DIVCONTENT.innerHTML = myData[i]['e_name'];
+    DIVCONTENT.classList = 'divcontent';
+    BTNBOX.appendChild(DIVCONTENT);
+    DIVCONTENT.setAttribute('onmouseover', `changeImage(${i})`);
+};
+
+function changeImage(index) {
+    stopSlideshow();
+    element.src = myData[index]['e_img'];
+    n = index;
+};
+
+document.querySelectorAll('.divcontent')[n].addEventListener('onmouseout', startSlideshow());
 
 var TopMenu, TopMenuPosition; // 전역변수로 지정한다.
 TopMenu = document.querySelector('.nav'); // 고정될 메뉴바를 인식한다.

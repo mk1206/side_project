@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/common.css">
     <title>@yield('title', '짭든어택')</title>
 </head>
-<body onload="rotate()" style="width: 100%">
+<body style="width: 100%">
     @if (request()->url() !== 'http://localhost:8000/login' && request()->url() !== 'http://localhost:8000/regist')
     @include('layout.header')
     @endif

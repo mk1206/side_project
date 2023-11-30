@@ -23,6 +23,10 @@ Route::get('/regist', [UserController::class, 'registget'])->name('regist.get');
 Route::post('/regist', [UserController::class, 'registpost'])->name('regist.post');
 Route::get('/logout', [UserController::class, 'logoutget'])->name('logout.get');
 
+Route::get('/mypage', function() {
+    return view('mypage');
+});
+
 Route::get('/logincheck', function() {
     return response()->json(['authcheck' => Auth::check()]);
 });

@@ -36,7 +36,7 @@ class UserController extends Controller
 
         Auth::login($result);
         if(Auth::check()) {
-            session($result->only('id'));
+            session($result->only('id', 'auth'));
         } else {
             $errorMsg = "인증 에러 발생";
             return view('login')->withErrors($errorMsg);

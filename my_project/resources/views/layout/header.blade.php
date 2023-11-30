@@ -6,14 +6,17 @@
         <div>
             <a href=""><img class="logoNexon" src="../img/logo_nexon.png"></a>
         </div>
-        @auth
             <div class="sign">
+            @auth
+            @if (session('auth') === 1)
+            <a href="">관리자페이지</a>
+            @else
+            <a href="">마이페이지</a>
+            @endif
                 <a class="signIn" href="{{ route('logout.get') }}">로그아웃</a>
-            </div>
-        @endauth
-        @guest
-        <div>
-            <div class="sign">
+            </div>        
+            @endauth
+            @guest
                 <a href="{{ route('regist.get') }}">회원가입</a>
                 <a class="signIn" href="{{ route('login.get') }}">로그인</a>
             </div>
