@@ -69,4 +69,4 @@ function logincheck(){
 }
 
 const GAMESTART = document.getElementById('gameStart');
-GAMESTART.addEventListener('click', logincheck)
+GAMESTART.addEventListener('click', logincheck);
