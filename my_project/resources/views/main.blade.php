@@ -17,4 +17,6 @@
     <div class="block">오늘의 피플</div>
     <div class="block">GM이야기</div>
 </div>
+<br><br>
+<div id="map" style="width:500px; height:400px;"></div>
 @endsection
