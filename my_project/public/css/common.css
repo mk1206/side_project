@@ -203,7 +203,8 @@ button {
 
 .divcontent {
     color: #8d8d8d;
-    padding: 30px;
+    margin: 20px;
+    cursor: pointer;
 }
 
 #colorOrange {

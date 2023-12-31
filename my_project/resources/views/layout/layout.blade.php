@@ -8,13 +8,12 @@
     <title>@yield('title', '짭든어택')</title>
 </head>
 <body style="width: 100%">
-    @if (request()->url() !== 'http://localhost:8000/login' && request()->url() !== 'http://localhost:8000/regist')
+    @if (!Str::contains(request()->url(), 'login') && !Str::contains(request()->url(), 'regist'))
     @include('layout.header')
     @endif
 
     @yield('main')
 
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6b402b118a5747fb73298eeccdc8b838"></script>
     <script src="../js/common.js"></script>
 </body>
 </html>
